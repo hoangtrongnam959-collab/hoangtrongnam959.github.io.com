@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>广州维岗泽科技有限公司 - 科技创新 智领未来</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #181818;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent-orange: #ff6b35;
+            --accent-yellow: #ffc107;
+            --accent-red: #e63946;
+            --border-color: #2a2a2a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Space Grotesk', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 导航栏 */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-red) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 50px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-orange);
+        }
+
+        .nav-cta {
+            padding: 12px 30px;
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--accent-orange);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-orange);
+            color: var(--bg-primary);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 120px 60px 80px;
+            overflow: hidden;
+        }
+
+        .hero-grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 107, 53, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 107, 53, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.3;
+        }
+
+        .hero-glow-1 {
+            background: var(--accent-orange);
+            top: -200px;
+            right: 10%;
+        }
+
+        .hero-glow-2 {
+            background: var(--accent-red);
+            bottom: -200px;
+            left: 10%;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            margin-bottom: 40px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-orange);
+        }
+
+        .hero-tag::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent-orange);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 5.5rem;
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -3px;
+            margin-bottom: 40px;
+        }
+
+        .hero-title .highlight {
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-desc {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 650px;
+            line-height: 1.8;
+            margin-bottom: 50px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-primary {
+            padding: 18px 40px;
+            background: var(--accent-orange);
+            color: var(--bg-primary);
+            border: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-yellow);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            padding: 18px 40px;
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-primary);
+            background: var(--bg-card);
+        }
+
+        /* 数字展示 */
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-top: 100px;
+            padding-top: 60px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .hero-stat-item {
+            position: relative;
+        }
+
+        .hero-stat-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent-orange);
+        }
+
+        .hero-stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .hero-stat-label {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* 服务区域 */
+        .services {
+            padding: 120px 60px;
+            background: var(--bg-secondary);
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 80px;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -2px;
+        }
+
+        .section-desc {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 400px;
+            text-align: right;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 50px 40px;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-orange), var(--accent-yellow));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-orange);
+            transform: translateY(-10px);
+        }
+
+        .service-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--bg-primary);
+            -webkit-text-stroke: 1px var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .service-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* 解决方案 */
+        .solutions {
+            padding: 120px 60px;
+            background: var(--bg-primary);
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .solution-image {
+            position: relative;
+        }
+
+        .solution-img-main {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            filter: grayscale(30%);
+            transition: filter 0.4s;
+        }
+
+        .solution-image:hover .solution-img-main {
+            filter: grayscale(0%);
+        }
+
+        .solution-img-accent {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 200px;
+            height: 200px;
+            border: 3px solid var(--accent-orange);
+        }
+
+        .solution-content h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 25px;
+        }
+
+        .solution-content h2 span {
+            color: var(--accent-orange);
+        }
+
+        .solution-content > p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .solution-features {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .solution-feature {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .solution-feature:hover {
+            border-color: var(--accent-orange);
+            transform: translateX(10px);
+        }
+
+        .solution-feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .solution-feature h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .solution-feature p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* 产品展示 */
+        .products {
+            padding: 120px 60px;
+            background: var(--bg-secondary);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .product-card {
+            position: relative;
+            overflow: hidden;
+            group: hover;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(50%);
+            transition: all 0.5s;
+        }
+
+        .product-card:hover .product-img img {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+
+        .product-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+        }
+
+        .product-tag {
+            font-size: 0.75rem;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .product-overlay h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        /* 统计数据 */
+        .stats {
+            padding: 100px 60px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: white;
+        }
+
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* 合作伙伴 */
+        .partners {
+            padding: 100px 60px;
+            background: var(--bg-primary);
+        }
+
+        .partners-marquee {
+            display: flex;
+            gap: 80px;
+            animation: marquee 30s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .partner-item {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            padding: 20px 40px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .partner-item:hover {
+            color: var(--accent-orange);
+            border-color: var(--accent-orange);
+        }
+
+        /* 页脚 */
+        footer {
+            padding: 80px 60px 40px;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand h3 span {
+            color: var(--accent-orange);
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: var(--accent-orange);
+            border-color: var(--accent-orange);
+            color: var(--bg-primary);
+        }
+
+        .footer-col h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: var(--text-primary);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent-orange);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            nav, .hero, .services, .solutions, .products, .stats, .partners, footer {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            .hero-title {
+                font-size: 3rem;
+            }
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            .section-desc {
+                text-align: left;
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links, .nav-cta {
+                display: none;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+                letter-spacing: -1px;
+            }
+            .services-grid, .products-grid, .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">维</div>
+            <div class="logo-text">广州维岗泽科技</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#services">核心服务</a></li>
+            <li><a href="#solutions">解决方案</a></li>
+            <li><a href="#products">产品中心</a></li>
+            <li><a href="#about">关于我们</a></li>
+        </ul>
+        <button class="nav-cta">联系我们</button>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-grid-bg"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        
+        <div class="hero-content">
+            <div class="hero-tag">INNOVATION · TECHNOLOGY · FUTURE</div>
+            
+            <h1 class="hero-title">
+                广州维岗泽<br>
+                <span class="highlight">科技有限公司</span>
+            </h1>
+            
+            <p class="hero-desc">
+                专注于前沿科技研发与应用，致力于为企业提供智能化、数字化的一站式解决方案，以创新驱动发展，用技术创造价值。
+            </p>
+            
+            <div class="hero-buttons">
+                <button class="btn-primary">
+                    探索更多
+                    <span>→</span>
+                </button>
+                <button class="btn-secondary">了解更多</button>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="hero-stat-item">
+                    <div class="hero-stat-number">200+</div>
+                    <div class="hero-stat-label">成功案例</div>
+                </div>
+                <div class="hero-stat-item">
+                    <div class="hero-stat-number">50+</div>
+                    <div class="hero-stat-label">技术专利</div>
+                </div>
+                <div class="hero-stat-item">
+                    <div class="hero-stat-number">30+</div>
+                    <div class="hero-stat-label">合作企业</div>
+                </div>
+                <div class="hero-stat-item">
+                    <div class="hero-stat-number">10+</div>
+                    <div class="hero-stat-label">行业覆盖</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-container">
+            <div class="section-header">
+                <div>
+                    <p class="section-label">OUR SERVICES</p>
+                    <h2 class="section-title">核心服务领域</h2>
+                </div>
+                <p class="section-desc">以技术创新为核心，为企业提供全方位的科技解决方案</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <h3>智能系统研发</h3>
+                    <p>基于人工智能与大数据技术，定制化开发智能管理系统，提升企业运营效率与决策能力。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <h3>物联网解决方案</h3>
+                    <p>提供从传感器部署到云平台搭建的完整物联网解决方案，实现设备互联与数据互通。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <h3>数据分析服务</h3>
+                    <p>专业的海量数据采集、清洗、分析与可视化服务，挖掘数据价值，驱动业务增长。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">04</div>
+                    <h3>云计算架构</h3>
+                    <p>为企业构建安全、稳定、可扩展的云架构体系，支持混合云与私有化部署方案。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">05</div>
+                    <h3>软件定制开发</h3>
+                    <p>企业级应用软件开发、移动端应用定制、技术咨询与系统集成服务。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">06</div>
+                    <h3>技术支持运维</h3>
+                    <p>7×24小时技术支持、系统监控、故障响应与定期维护，保障系统稳定运行。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="solutions" id="solutions">
+        <div class="section-container">
+            <div class="solutions-grid">
+                <div class="solution-image">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800" alt="智能科技" class="solution-img-main">
+                    <div class="solution-img-accent"></div>
+                </div>
+                
+                <div class="solution-content">
+                    <p class="section-label">OUR SOLUTIONS</p>
+                    <h2>智能化<span>行业解决方案</span></h2>
+                    <p>结合不同行业的业务场景与痛点需求，提供定制化的智能解决方案，助力企业实现数字化转型升级。</p>
+                    
+                    <div class="solution-features">
+                        <div class="solution-feature">
+                            <div class="solution-feature-icon">🏭</div>
+                            <div>
+                                <h4>智慧工业</h4>
+                                <p>工业物联网与智能制造解决方案</p>
+                            </div>
+                        </div>
+                        
+                        <div class="solution-feature">
+                            <div class="solution-feature-icon">🏢</div>
+                            <div>
+                                <h4>智慧楼宇</h4>
+                                <p>智能建筑与能耗管理系统</p>
+                            </div>
+                        </div>
+                        
+                        <div class="solution-feature">
+                            <div class="solution-feature-icon">🚗</div>
+                            <div>
+                                <h4>智慧交通</h4>
+                                <p>交通流量监控与智能调度系统</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="section-container">
+            <div class="section-header">
+                <div>
+                    <p class="section-label">OUR PRODUCTS</p>
+                    <h2 class="section-title">核心产品体系</h2>
+                </div>
+                <p class="section-desc">自主研发的明星产品，已广泛应用于多个行业领域</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600" alt="智能机器人">
+                    </div>
+                    <div class="product-overlay">
+                        <p class="product-tag">智能硬件</p>
+                        <h3>智能服务机器人</h3>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" alt="智能芯片">
+                    </div>
+                    <div class="product-overlay">
+                        <p class="product-tag">核心产品</p>
+                        <h3>边缘计算模组</h3>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600" alt="数据大屏">
+                    </div>
+                    <div class="product-overlay">
+                        <p class="product-tag">软件平台</p>
+                        <h3>数据监控大屏</h3>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600" alt="智能传感">
+                    </div>
+                    <div class="product-overlay">
+                        <p class="product-tag">传感设备</p>
+                        <h3>智能传感终端</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="section-container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">成功项目</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">技术专利</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">合作企业</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">专业人才</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners">
+        <div class="section-container">
+            <div class="section-header">
+                <div>
+                    <p class="section-label">OUR PARTNERS</p>
+                    <h2 class="section-title">合作伙伴</h2>
+                </div>
+            </div>
+            
+            <div style="overflow: hidden;">
+                <div class="partners-marquee">
+                    <div class="partner-item">华为技术有限公司</div>
+                    <div class="partner-item">腾讯云计算</div>
+                    <div class="partner-item">阿里巴巴集团</div>
+                    <div class="partner-item">百度智能云</div>
+                    <div class="partner-item">京东科技</div>
+                    <div class="partner-item">字节跳动</div>
+                    <div class="partner-item">小米科技有限公司</div>
+                    <div class="partner-item">大疆创新</div>
+                    <div class="partner-item">华为技术有限公司</div>
+                    <div class="partner-item">腾讯云计算</div>
+                    <div class="partner-item">阿里巴巴集团</div>
+                    <div class="partner-item">百度智能云</div>
+                    <div class="partner-item">京东科技</div>
+                    <div class="partner-item">字节跳动</div>
+                    <div class="partner-item">小米科技有限公司</div>
+                    <div class="partner-item">大疆创新</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="about">
+        <div class="section-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>广州<span>维岗泽</span>科技</h3>
+                    <p>广州维岗泽科技有限公司是一家专注于前沿科技研发与应用的高新技术企业，秉持"创新驱动，技术引领"的理念，为企业客户提供智能化、数字化的一站式解决方案。</p>
+                    <div class="footer-social">
+                        <a href="#">微</a>
+                        <a href="#">博</a>
+                        <a href="#">知</a>
+                        <a href="#">乎</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>核心服务</h4>
+                    <ul>
+                        <li><a href="#">智能系统研发</a></li>
+                        <li><a href="#">物联网解决方案</a></li>
+                        <li><a href="#">数据分析服务</a></li>
+                        <li><a href="#">云计算架构</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>产品中心</h4>
+                    <ul>
+                        <li><a href="#">智能服务机器人</a></li>
+                        <li><a href="#">边缘计算模组</a></li>
+                        <li><a href="#">数据监控大屏</a></li>
+                        <li><a href="#">智能传感终端</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">电话咨询</a></li>
+                        <li><a href="#">商务合作</a></li>
+                        <li><a href="#">人才招聘</a></li>
+                        <li><a href="#">媒体采访</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 广州维岗泽科技有限公司 版权所有</p>
+                <p>粤ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
